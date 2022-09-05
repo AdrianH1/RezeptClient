@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RezeptClient</string>
+    <string name="btn_add">Hinzufügen</string>
+    <string name="detail_default">Empty</string>
+    <string name="addName">Rezept</string>
+    <string name="addComponents">Zutaten</string>
+    <string name="addButton">Speichern</string>
 </resources>
