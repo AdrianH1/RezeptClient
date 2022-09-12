@@ -14,5 +14,11 @@ public class DetailActivity extends AppCompatActivity {
 
         TextView txt_name = (TextView) findViewById(R.id.txt_name);
         TextView txt_components = (TextView) findViewById(R.id.txt_components);
+
+        String name = getIntent().getStringExtra("name");
+        String components = getIntent().getStringExtra("components");
+
+        txt_name.setText(name);
+        txt_components.setText(components);
     }
 }

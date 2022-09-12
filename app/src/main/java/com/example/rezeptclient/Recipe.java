@@ -6,6 +6,12 @@ public class Recipe {
     private String name;
     private String components;
 
+    public Recipe (String name, String components)
+    {
+        this.name = name;
+        this.components = components;
+    }
+
     public int getId() {
         return id;
     }

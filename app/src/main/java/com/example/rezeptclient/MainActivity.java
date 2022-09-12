@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RecipeService service;
     public CustomAdapter customAdapter;
-    ArrayList<String> list;
+    public static ArrayList<String> list;
+    public static Recipe[] recipeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +42,18 @@ public class MainActivity extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(MainActivity.this, AddRecipeActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, AddRecipeActivity.class);
+                startActivity(intent);
             }
         });
 
         lst_recipes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                System.out.println("test");
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("name", recipeList[i].getName());
+                intent.putExtra("components", recipeList[i].getComponents());
+                startActivity(intent);
             }
         });
     }
@@ -84,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void getResult(Recipe[] data) {
                 list.clear();
+                recipeList = data;
                 for (Recipe r : data) {
                     list.add(r.getName());
                 }

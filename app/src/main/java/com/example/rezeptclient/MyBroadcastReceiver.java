@@ -12,7 +12,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         try {
             String action = intent.getAction();
             if (action == ConnectivityManager.EXTRA_NO_CONNECTIVITY) {
-
+                RecipeService.runService = true;
             }
         } catch (Exception e) {
             e.printStackTrace();

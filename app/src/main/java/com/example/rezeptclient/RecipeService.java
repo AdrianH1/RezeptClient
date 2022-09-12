@@ -17,7 +17,7 @@ import java.net.URLConnection;
 
 public class RecipeService extends Service {
 
-    private boolean runService = true;
+    public static boolean runService = true;
 
     public void setRunService(boolean runService) {
         this.runService = runService;
